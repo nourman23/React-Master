@@ -51,19 +51,15 @@ function Login() {
     setLoading(true);
     axios(config)
       .then((res) => {
-        // console.log(res.data.access_token);
+        console.log(res.data.user_info);
         if (
           SignIn({
             token: res.data.access_token,
             expiresIn: 1000,
             tokenType: "Bearer",
-            // authState: setCurrentUserToLocal(res.data.data.user),
+            authState: res.data.user_info,
           })
         ) {
-          // setCurrentUser(res.data.data.user);
-          // setToken(res.data.data.token);
-          // setCurrentUserToLocal(res.data.data.user);
-          // setTokenToLocal(res.data.data.token);
           setLoading(false);
           return navigate("/");
         }
@@ -131,12 +127,12 @@ function Login() {
         handleLogin(e);
       }}
     >
-      <MDBContainer className="py-5">
-        <MDBCard className="col-8 mx-auto">
+      <MDBContainer className="py-5 my-5">
+        <MDBCard className="col-8 mx-auto mt-5">
           <MDBRow className="g-0 ">
-            <MDBCol className="col-lg-6 d-none  d-lg-block">
+            <MDBCol className="col-lg-6  h-100 d-lg-block">
               <MDBCardImage
-                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3Vycnl8ZW58MHx8MHx8&w=1000&q=80"
+                src="https://images.pexels.com/photos/7217849/pexels-photo-7217849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="login form"
                 className="rounded-start w-100 "
               />
@@ -144,9 +140,9 @@ function Login() {
 
             <MDBCol className="col-lg-6 ">
               <MDBCardBody className="d-flex flex-column pb-0 ">
-                <div className="d-flex flex-column mt-2 align-items-center">
+                <div className="d-flex flex-column mt-5 align-items-center">
                   {/* <img src={logo} alt="" style={{ width: 50 }} /> */}
-                  <p className="h3 fw-bold mb-0">Foods Recipe</p>
+                  <p className="h3 fw-bold mb-0">MOVER</p>
                 </div>
 
                 <h5
@@ -185,7 +181,8 @@ function Login() {
                 />
                 {!loading ? (
                   <Button
-                    className="mb-2 px-5 bg-dark border-dark"
+                    className="mb-2 px-5 border-dark"
+                    style={{ backgroundColor: "#3b3b3b" }}
                     size="md"
                     type="submit"
                   >
@@ -217,7 +214,7 @@ function Login() {
                   className="mt-5 pb-lg-2 text-center "
                   style={{ color: "#393f81" }}
                 >
-                  Don't have an account?{" "}
+                  Don't have an account?
                   <Link to="/register" style={{ color: "#393f81" }}>
                     Register here
                   </Link>

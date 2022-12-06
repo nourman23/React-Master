@@ -1,15 +1,34 @@
+import { TheCarousel } from "./Carousel";
 import React from "react";
+import { Svg } from "./Svg";
 
 function Jumbotron(props) {
+  // console.log(props);
+  // let homeStyle;
+  // if (props.title == "Home") {
+  //   console.log("true");
+  //   homeStyle = {
+
+  //   };
+  // } else {
+  //   console.log("false");
+  //   homeStyle = {
+  //     background: "black",
+  //   };
+  // }
+
   return (
     <>
       <div
-        className=" text-center bg-light position-relative shadow"
+        className=" text-center bg-light position-relative  jumborton"
         style={{
-          marginTop: "58px",
-          height: "450px",
-          backgroundImage:
-            'url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cardboard-boxes-and-cleaning-things-for-moving-into-a-new-home-1573953252.jpg?crop=1.00xw:0.758xh;0,0.173xh&resize=1200:*")',
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundImage: props.image,
+          height: props.height,
+          boxShadow:
+            "rgba(0, 0, 0, 0.25) 0px 54px 55px,rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
         }}
       >
         <div
@@ -23,11 +42,43 @@ function Jumbotron(props) {
           }}
         >
           <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-            <h1 className="my-5 text-light">{props.title}</h1>
-            <h4 className="mb-3 text-light">{props.subTitle}</h4>
+            {props.title != "Home" ? (
+              <>
+                <h1 className="my-5 text-light">{props.title}</h1>
+                {props.subTitle == "driver conditions" ? (
+                  <div className="d-flex align-items-center p-2">
+                    <a
+                      href="/driver_register"
+                      className="btn bg-color p-2 mr-2"
+                    >
+                      <div className="d-flex align-items-center">
+                        <ion-icon
+                          name="speedometer-outline"
+                          className="mr-2"
+                          style={{ fontSize: "20px" }}
+                        />
+                        Signup now
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      className="text-white "
+                      style={{ textDecoration: "underline" }}
+                    >
+                      already have an account ? login
+                    </a>
+                  </div>
+                ) : (
+                  <p className="text-light"> {props.subTitle}</p>
+                )}
+              </>
+            ) : (
+              <TheCarousel title={props.title} subTitle={props.subTitle} />
+            )}
           </div>
         </div>
       </div>
+      {/* <Svg /> */}
     </>
   );
 }

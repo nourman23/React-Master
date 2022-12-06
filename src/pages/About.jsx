@@ -7,7 +7,7 @@ import Jumbotron from "../components/Jumbotron";
 function About() {
   return (
     <>
-      <Jumbotron title="About Us" subTitle="subHeading" />
+      <Jumbotron title="About Us" subTitle="subHeading" height="300px" />
 
       <TopAbout />
       <OurWork />

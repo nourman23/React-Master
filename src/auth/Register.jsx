@@ -87,29 +87,20 @@ function Register() {
         handleRegister(e);
       }}
     >
-      <MDBContainer className="py-5 h-100">
-        <MDBCard className="col-5 mx-auto">
+      <MDBContainer className="py-5 h-100 my-5">
+        <MDBCard className="col-5 mx-auto mt-5">
           <MDBRow className="g-0 ">
-            {/* <MDBCol className="col-lg-6 d-none  d-lg-block">
-              <MDBCardImage
-                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3Vycnl8ZW58MHx8MHx8&w=1000&q=80"
-                alt="login form"
-                className="rounded-start w-100 "
-              />
-            </MDBCol> */}
-
             <MDBCol className="col-lg-12 ">
               <MDBCardBody className="d-flex flex-column pb-0 ">
                 <div className="d-flex flex-column mt-2 align-items-center">
                   {/* <img src={logo} alt="" style={{ width: 50 }} /> */}
-                  <p className="h3 fw-bold mb-0">Foods Recipe</p>
+                  <p className="h3 fw-bold mb-0">MOVER</p>
                 </div>
-
                 <h5
-                  className="fw-normal my-4 pb-3 text-center"
+                  className="fw-normal mb-4 mt-1 pb-3 text-center"
                   style={{ letterSpacing: "1px" }}
                 >
-                  Sign into your account
+                  create an account
                 </h5>
                 {message.register != undefined ? (
                   <Alert variant="danger"> {message.register} </Alert>
@@ -153,37 +144,40 @@ function Register() {
                 <div>
                   <label
                     htmlFor="dropzone-file"
-                    className="flex flex-col items-center mb-4 justify-center w-full  border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                    className="tw-flex tw-flex-col tw-items-center tw-mb-4 tw-justify-center tw-w-full  
+                    tw-border-2 tw-border-gray-300 tw-border-dashed tw-rounded-lg tw-cursor-pointer tw-bg-gray-50 
+                    dark:hover:tw-bg-bray-800 dark:tw-bg-gray-700 hover:tw-bg-gray-100 dark:tw-border-gray-600 
+                   dark:hover:tw-border-gray-500 dark:hover:tw-bg-gray-600"
                   >
-                    <div className="flex flex-col items-center justify-center p-1">
+                    <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-p-1">
                       <svg
                         aria-hidden="true"
-                        className="w-10 h-10  text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
+                        className="tw-w-10 tw-h-10  tw-text-gray-400"
+                        fill="tw-none"
+                        stroke="tw-currentColor"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                          strokeLinecap="tw-round"
+                          strokeLinejoin="tw-round"
                           strokeWidth={2}
                           d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                         />
                       </svg>
                       {image ? (
-                        <span className="text-grey pb-3 pt-2">
+                        <span className="tw-text-grey tw-pb-3 tw-pt-2">
                           {image.name}
                         </span>
                       ) : (
                         <>
-                          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                            <span className="font-semibold">
+                          <p className="tw-mb-2 tw-text-sm tw-text-gray-500 dark:tw-text-gray-400">
+                            <span className="tw-font-semibold">
                               Click to upload your image
                             </span>
                             <span> or drag and drop</span>
                           </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                          <p className="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">
                             SVG, PNG, JPG or GIF (MAX. 800x400px)
                           </p>
                         </>
@@ -192,7 +186,7 @@ function Register() {
                     <input
                       id="dropzone-file"
                       type="file"
-                      className="hidden"
+                      className="tw-hidden"
                       required
                       onChange={(e) => {
                         console.log(e.target.files[0]);

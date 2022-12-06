@@ -2,7 +2,7 @@ import React from "react";
 
 export const TopAbout = () => {
   return (
-    <section id="about" className="about ">
+    <section id="about" className="about " data-aos="zoom-in-left">
       <div className="container" data-aos="fade-up">
         <div className="row gy-4">
           <div className="col-lg-6 position-relative align-self-start order-lg-last order-first">
