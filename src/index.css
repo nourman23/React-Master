@@ -31,7 +31,7 @@ code {
 /* Colors */
 :root {
   --color-default: #3b3b3b;
-  --color-primary: #d18f6c;
+  --color-primary: #feb900;
   --color-secondary: #52565e;
   --lin-color: linear-gradient(to bottom, #d18f6c, #feb900);
 }

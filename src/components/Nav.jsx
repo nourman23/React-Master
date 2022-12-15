@@ -1,16 +1,10 @@
 import React from "react";
-import { NavLink, useNavigate, Link } from "react-router-dom";
-import { useSignOut, useIsAuthenticated } from "react-auth-kit";
+import { NavLink, Link } from "react-router-dom";
+import { useIsAuthenticated } from "react-auth-kit";
 import logo from "../images/logo.png";
 export const Nav = () => {
-  const signOut = useSignOut();
   const isAuthenticated = useIsAuthenticated();
-  const navigate = useNavigate();
 
-  const logout = () => {
-    signOut();
-    navigate("/login");
-  };
   return (
     <>
       <nav
@@ -79,7 +73,6 @@ export const Nav = () => {
               </li>
             </ul>
           </div>
-          {console.log(isAuthenticated())}
           {isAuthenticated() ? (
             <>
               <Link className="btn bg-color" to="/profile">

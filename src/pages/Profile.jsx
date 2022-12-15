@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
-  // const signOut = useSignOut();
+  const signOut = useSignOut();
   const [verticalActive, setVerticalActive] = useState("tab1");
 
   const handleVerticalClick = (value) => {
@@ -26,10 +26,10 @@ export default function App() {
 
     setVerticalActive(value);
   };
-  // const logout = () => {
-  //   signOut();
-  //   navigate("/login");
-  // };
+  const logout = () => {
+    signOut();
+    navigate("/login");
+  };
   return (
     <>
       <MDBRow className=" h-100 w-75 " style={{ marginTop: "50px" }}>
@@ -68,7 +68,13 @@ export default function App() {
               </MDBTabsLink>
             </MDBTabsItem>
             <MDBTabsItem className="py-5">
-              <MDBTabsLink onClick={() => {}}>Logout</MDBTabsLink>
+              <MDBTabsLink
+                onClick={() => {
+                  logout();
+                }}
+              >
+                Logout
+              </MDBTabsLink>
             </MDBTabsItem>
           </MDBTabs>
         </MDBCol>

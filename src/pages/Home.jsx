@@ -4,13 +4,13 @@ import { TopAbout } from "../components/TopAbout";
 import { TopServices } from "../components/TopServices";
 import { BotServices } from "../components/BotServices";
 import { Testimonials } from "../components/Testimonials";
-// import { useSelector, useDispatch } from "react-redux";
-// import { getUsers } from "../stors/Reducers/UserReducer";
+import { useSelector, useDispatch } from "react-redux";
+import { getUsers } from "../stors/Reducers/UserReducer";
 
 function Home() {
-  // const Users = useSelector((state) => state);
+  const Users = useSelector((state) => state);
   // const dispatch = useDispatch();
-  // console.log(Users);
+  console.log(Users);
   // useEffect(() => {
   //   dispatch(getUsers());
   // }, []);

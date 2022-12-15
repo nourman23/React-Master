@@ -189,7 +189,6 @@ function Register() {
                       className="tw-hidden"
                       required
                       onChange={(e) => {
-                        console.log(e.target.files[0]);
                         setImage(e.target.files[0]);
                       }}
                     />

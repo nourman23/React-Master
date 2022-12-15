@@ -1,6 +1,5 @@
 import { TheCarousel } from "./Carousel";
 import React from "react";
-import { Svg } from "./Svg";
 
 function Jumbotron(props) {
   // console.log(props);
@@ -27,8 +26,6 @@ function Jumbotron(props) {
           backgroundPosition: "center",
           backgroundImage: props.image,
           height: props.height,
-          boxShadow:
-            "rgba(0, 0, 0, 0.25) 0px 54px 55px,rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
         }}
       >
         <div
@@ -38,7 +35,7 @@ function Jumbotron(props) {
             position: "absolute",
             top: 0,
             bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.482)",
+            backgroundColor: "rgba(0, 0, 0, 0.31)",
           }}
         >
           <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center">

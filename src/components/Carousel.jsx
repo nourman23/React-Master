@@ -3,7 +3,6 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 export const TheCarousel = (props) => {
-  // console.log(props);
   var items = [
     {
       text: "Become a driver and get paid !",

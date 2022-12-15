@@ -1,0 +1,46 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const getBooks = createAsyncThunk("BookSlice/getBooks", async () => {
+  return axios
+    .get("http://127.0.0.1:8000/api/books")
+    .then((res) => res.data)
+    .catch((error) => console.log(error));
+});
+
+const initialState = {
+  books: [],
+};
+
+export const BookSlice = createSlice({
+  name: "books",
+  initialState,
+  reducers: {
+    createBook: (state, { payload }) => {
+      state.books.push(payload);
+      // return state;
+    },
+    deleteBook: (state, { payload }) => {
+      state.books = state.books.filter((book) => book.id !== payload);
+    },
+  },
+  extraReducers: {
+    [getBooks.pending]: (state) => {
+      state.status = "Pending";
+    },
+
+    [getBooks.fulfilled]: (state, action) => {
+      state.status = "Fulfilled";
+      state.data = action.payload;
+    },
+
+    [getBooks.rejected]: (state) => {
+      state.status = "Rejected";
+    },
+  },
+});
+
+export const { createBook, deleteBook } = BookSlice.actions;
+
+export default BookSlice.reducer;

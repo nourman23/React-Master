@@ -45,23 +45,24 @@ function Login() {
   };
   //-------------------------------
   const handleLogin = (e) => {
-    // console.log(data);
     e.preventDefault();
     setMessage((prev) => ({ ...prev, login: "" }));
     setLoading(true);
     axios(config)
       .then((res) => {
-        console.log(res.data.user_info);
+        console.log(res.data);
         if (
           SignIn({
             token: res.data.access_token,
-            expiresIn: 1000,
+            expiresIn: 7000,
             tokenType: "Bearer",
             authState: res.data.user_info,
           })
         ) {
           setLoading(false);
-          return navigate("/");
+          if (res.data.role == "admin") {
+            return navigate("/dashboard");
+          } else return navigate("/");
         }
       })
       .catch(function (error) {

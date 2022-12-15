@@ -5,7 +5,7 @@ import { useAuthUser } from "react-auth-kit";
 
 export const ProfileComponent = () => {
   const auth = useAuthUser();
-  console.log(auth());
+
   return (
     <div>
       <div className="row d-flex justify-content-center ">
